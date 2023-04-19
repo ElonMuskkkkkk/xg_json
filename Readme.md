@@ -19,13 +19,15 @@
 7. 格式化输出Json项
 
 ## API设计
-Json_Base: 负责读取json文件，存储json数据
-
 
 JsonItem: 
 1. 基本json对象，包括对象、数组、布尔值、字符串、数字、null
-2. 支持序列化与反序列化
 
+JsonParser:
+1. 负责json文本的解析
+
+Json:
+1. 负责载入与格式化输出
 
 
 
