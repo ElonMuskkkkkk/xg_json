@@ -24,7 +24,7 @@ char JsonParser::getNextToken()
 
 JsonItem JsonParser::parse()
 {
-    char ch = getNextToken();
+    char ch = getNextToken(); //获得一个token
     switch(ch){
     case 'n':
         return parse_null();
@@ -146,8 +146,8 @@ JsonItem JsonParser::parse_array()
     char ch = getNextToken();
     if (ch == ']')
         return arr;
+    m_idx--;
     while(true){
-        m_idx--;
         arr.add(parse());
         ch = getNextToken();
         if(ch == ']')
